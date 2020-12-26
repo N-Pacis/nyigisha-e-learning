@@ -1,0 +1,93 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dashboard.css?v=<?php echo time(); ?>">
+    <title>Welcome</title>
+    <script type="text/javascript">
+        function displayStudents() {
+            var students = document.querySelector('.content-student');
+            students.style.display = 'block';
+        }
+
+        function addStudents() {
+            var form = document.querySelector('form');
+            form.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <?php
+    $school_name = $_SESSION['username'];
+    $con = new mysqli('localhost', 'root', '', 'Nyigisha_db') or die(mysqli_error($con));
+    $select_id = $con->query("SELECT * FROM registration WHERE school_name = '$school_name' ") or die(mysqli_error($con));
+    // pre_r($select_id->fetch_assoc());
+    while ($row_id = $select_id->fetch_assoc()) {
+        $row_foreign_id = $row_id['school_id'];
+    }
+    $select = $con->query("SELECT * FROM Students where School_id = '$row_foreign_id'") or die(mysqli_error($con));
+    // pre_r($select);
+    ?>
+    <?php
+    function pre_r($array)
+    {
+        echo '<pre>';
+        print_r($array);
+        echo '</pre>';
+    }
+    ?>
+    <div class="sidebar">
+        <li class="lst">Signed in as: </li>
+        <li class="item1"><a href="#home">Dashboard</a></li>
+        <li class="item2"><a href="#instructors">Instructors</a></li>
+        <li><a href="#students" class="active" onclick="displayStudents()">Students</a></li>
+        <li><a href="#courses">Courses</a></li>
+    </div>
+
+    <div class="students">
+        <div class="content">
+            <h1>Students</h1>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Student Class</th>
+                </tr>
+            </thead>
+            <?php
+            while ($row = $select->fetch_assoc()) :
+            ?>
+                <tr>
+                    <td><?php echo $row['student_id']; ?></td>
+                    <td><?php echo $row['student_name']; ?></td>
+                    <td><?php echo $row['student_class']; ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+        <div class="col-md-4">
+            <form action="registration.php" method="POST">
+                <label>Student_id</label>
+                <input type="text" name="student_id" class="form-control"><br>
+                <label>Student Name</label>
+                <input type="text" name="student_name" class="form-control"><br>
+                <label>Student Password</label>
+                <input type="password" name="student_password" class="form-control"><br>
+                <label>Repeat password</label>
+                <input type="password" name="repeat_password" class="form-control"><br>
+                <label>Student Class</label>
+                <input type="text" name="student_class" class="form-control"><br>
+                <button type="submit" name="add_student" class="btn btn-primary" value="Add student">Add student</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
