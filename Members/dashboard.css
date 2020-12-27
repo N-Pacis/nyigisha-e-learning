@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+  }
+  
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 60%;
+    float: left;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    border-right: 1px solid #808080;
+  }
+ .sidebar h1{
+  text-transform: uppercase;
+  margin-top: 20px;
+  color: #000;
+  text-align: center;
+  font-size: 22px;
+ }
+ .border{
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 3px;
+  background: #3498db;
+  margin-bottom: 40px;
+}
+  .ps a{
+    display: inline-flex;
+    /* flex-wrap: wrap; */
+    margin-left: 30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+  }
+  .ps a img{
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.4s all;
+  }
+  .ps a:hover img{
+    filter: none;
+}  
+.section{
+  width: 450px;
+  float: right;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #000;
+  /* text-align: justify; */
+  height: 0;
+  overflow: hidden;
+}
+.section:target{
+  height: auto;
+} 
+.section span.name{
+  margin: 100px 0 5px;
+}
+
+.name{
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left; margin: 0 10px 20px 30px;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  
