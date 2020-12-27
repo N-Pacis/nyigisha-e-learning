@@ -1,6 +1,0 @@
-stages:
-  - deploy
-deploy:
-  stage: deploy
-  script:
-    - 'if["$CI_COMMIT_REF_NAME" == "master"] cp -R dist/* /opt/lampp/htdocs/NyigishaPhp/nyigisha-e-learning; fi'
