@@ -85,6 +85,9 @@ body {
   #btn-student{
     width: 330px !important;
   }
+  #btn-instructor{
+    width: 330px !important;
+  }
   #close-modal{
     position: absolute;
     font-size: 30px;
@@ -241,6 +244,58 @@ body {
   #btn{
     margin-top: 20px;
     width: 324px;
+  }
+  #instructors{
+      float: right;
+      width: 80%;
+      display: none;
+  }
+  #instructors>.btn{
+    border-radius: 4px;
+    margin-left: 420px;
+    margin-top: 20px;
+  }
+  #modal-form-instructors{
+    width: 80%;
+    height:auto;
+    overflow-y: hidden;
+    background-color:rgba(0,0,0,0.7);
+    margin-top: -60px !important;
+    position: absolute; 
+    display: none;
+    z-index: 500 !important;
+  }
+  #close-modal-instructors{
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    color:#000;
+    background:none;
+    top: -5px;
+    right: 14px;
+    border: none !important;
+    outline: none !important;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+  #instructor-form{
+    background-color: #fff;
+    width: 450px;
+    padding: 19px;   
+    height: 590px;
+    margin-left: 350px;  
+    margin-top: 70px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2 !important;
+  }
+  #instructor-form input[type=file]{
+    padding: 0px;
+    margin-bottom: 10px ;
+    font-size: 15px;
+    height: 29px;
+    cursor: pointer;
+    object-fit: contain;
   }
   @media screen and (max-width: 700px) {
     .sidebar {
