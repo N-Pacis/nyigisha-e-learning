@@ -31,7 +31,7 @@
                 <label>School name</label>
                 <input type="text" name="school" class="form-control" required>
                 <label>Password</label>
-                <input type="password" name="password" class="form-control" required><br>
+                <input type="password" name="passwo>rd" class="form-control" required><br>
             <button type="submit" class="btn btn-primary"> Login </button>
         </form><br>
         <a href="myLogin.php"><button class="btn btn-primary">Create an account</button></a>
