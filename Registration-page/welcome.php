@@ -149,7 +149,27 @@ $rows = mysqli_num_rows($result_courses);
         </div>
     </div>
      <div id="instructors">
-             
+         <button class="btn btn-primary" id="new-instructor">New Instructor</button>
+         <div id="modal-form-instructors">
+            <div class="col-md-4" id="instructor-form">
+                <button id="close-modal-instructors">+</button>
+                <form action="registration.php" method="POST" enctype="multipart/form-data">
+                    <label>Instructor_id</label>
+                    <input type="text" name="instructor_id" class="form-control"><br>
+                    <label>Instructor's Name</label>
+                    <input type="text" name="instructor_name" class="form-control"><br>
+                    <label>Course</label>
+                    <input type="text" name="course" class="form-control"><br>
+                    <label>Class</label>
+                    <input type="text" name="class" class="form-control"><br>
+                    <label>Instructor's image</label>
+                    <input type="file" class="form-control" name="instructor_image">
+                    <label>Description</label>
+                    <textarea name="description" cols="30" rows="4" class="form-control"></textarea><br>
+                    <button type="submit" name="add_instructor" class="btn btn-primary" id='btn-instructor' value="Add instructor">Add Instructor</button>
+                </form>
+            </div>
+        </div>
      </div>
 </body>
 </html>
@@ -235,7 +255,14 @@ $rows = mysqli_num_rows($result_courses);
         var form= document.querySelector('.modal-form-courses');
         form.style.display = 'flex';
     });
+    document.querySelector('#new-instructor').addEventListener('click',function(){
+        var form= document.querySelector('#modal-form-instructors');
+        form.style.display = 'flex';
+    });
     document.querySelector('.close-modal-courses').addEventListener('click', function() {
         document.querySelector('.modal-form-courses').style.display = 'none';
+    });
+    document.querySelector('#close-modal-instructors').addEventListener('click', function() {
+        document.querySelector('#modal-form-instructors').style.display = 'none';
     });
 </script>

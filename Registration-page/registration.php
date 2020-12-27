@@ -145,4 +145,50 @@ elseif(isset($_POST['submit-course'])){
         echo "You can not upload images of this type";
     }
 }
+elseif (isset($_POST['add_instructor'])) {
+    $con = mysqli_connect('localhost','root','') or die (mysqli_error($con));
+    mysqli_select_db($con,'Nyigisha_db');
+    $instructor_id = $_POST['instructor_id'];
+    $instructor_name = $_POST['instructor_name'];
+    $instructor_course = $_POST['course'];
+    $instructor_class = $_POST['class'];
+    $instructor_description = $_POST['description'];
+    $instructor_image = $_FILES['instructor_image'];
+    $instructor_image_name = $instructor_image['name'];
+    $instructor_image_tmp =  $instructor_image['tmp_name'];
+    $instructor_image_type =  $instructor_image['type'];
+    $instructor_image_error =  $instructor_image['error'];
+    $instructor_image_size =  $instructor_image['size'];
+
+    $instructor_image_ext = explode('.',$instructor_image_name);
+    $instructor_image_actual_ext = strtolower(end($instructor_image_ext));
+    $allowed_image_ext = array('jpeg','jpg','png');
+    if (in_array($instructor_image_actual_ext,$allowed_image_ext)) {
+        if ($instructor_image_error == 0) {
+            if($file_image_size <=1000000){
+                $image_new_name = uniqid("",true)."-".$instructor_image_name;
+                $uploads_image_directory = 'uploads_instructors_image';
+                move_uploaded_file($instructor_image_tmp,$uploads_image_directory.'/'.$image_new_name);
+                $reg = " insert into instructors(Instructor_id,Name,Course,Class,Instructor_image,Description) values('$instructor_id','$instructor_name','$instructor_course','$instructor_class','$image_new_name','$instructor_description')";
+                $result = mysqli_query($con,$reg) or die(mysqli_error($con));
+                if($result){
+                '<h1>Inserted data successfully</h1>';
+                header('location:welcome.php');
+            }   
+            else{
+                '<h1>Failed to register a new instructor</h1>';
+            }
+            }
+            else{
+            }
+                'The file is too big';
+            }
+        else{
+            'The file contains errors';
+        }
+    }
+    else{
+        'The file type is not allowed';
+    }
+}
 ?>
