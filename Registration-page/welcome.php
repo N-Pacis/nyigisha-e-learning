@@ -4,6 +4,9 @@ $con = new mysqli('localhost', 'root', '', 'Nyigisha_db') or die(mysqli_error($c
 $select_courses = "SELECT * FROM Courses";
 $result_courses = mysqli_query($con,$select_courses);
 $rows = mysqli_num_rows($result_courses);
+$select_instructors = "SELECT * FROM instructors";
+$result_instructors = mysqli_query($con,$select_instructors);
+$instructors_num = mysqli_num_rows($result_instructors);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,6 +152,15 @@ $rows = mysqli_num_rows($result_courses);
         </div>
     </div>
      <div id="instructors">
+         <?php while ($row_instructors = $result_instructors->fetch_assoc()):?>
+               <a href="#<?php echo $row_instructors['Instructor_id'];?>"><img src="instructors_image/<?php echo $row_instructors['Instructor_image'];?>" alt="<?php echo $row_instructors['Name'];?>" class="instructors"></a>
+               <div id="<?php echo $row_instructors['Instructor_id'];?>">
+                    <p class="instructor_description"><span>Names:</span><?php echo $row_instructors['Name']?></p>
+                    <p class="instructor_description"><span>Teaches:</span><?php echo $row_instructors['Course']?></p>
+                    <p class="instructor_description"><span>Classes:</span><?php echo $row_instructors['Class']?></p>
+                    <p class="instructor_description"><span>Description:</span><?php echo $row_instructors['Description']?></p>
+               </div>
+         <?php endwhile;?>
          <button class="btn btn-primary" id="new-instructor">New Instructor</button>
          <div id="modal-form-instructors">
             <div class="col-md-4" id="instructor-form">

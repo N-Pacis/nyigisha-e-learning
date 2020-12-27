@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $lname = $_POST['lname'];
     $school = $_POST['school'];
     $password = $_POST['password'];
-    $repeat = $_POST['password-repeat'];
+    $repeat = $_POST['password-repeat'];       
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $describe = $_POST['describe'];
@@ -165,10 +165,10 @@ elseif (isset($_POST['add_instructor'])) {
     $allowed_image_ext = array('jpeg','jpg','png');
     if (in_array($instructor_image_actual_ext,$allowed_image_ext)) {
         if ($instructor_image_error == 0) {
-            if($file_image_size <=1000000){
-                $image_new_name = uniqid("",true)."-".$instructor_image_name;
-                $uploads_image_directory = 'uploads_instructors_image';
-                move_uploaded_file($instructor_image_tmp,$uploads_image_directory.'/'.$image_new_name);
+            if($instructor_image_size <=1000000){
+                $image_new_name = uniqid('', true) . "-" . $instructor_image_name;
+                $uploads_image_directory = 'instructors_image';
+                move_uploaded_file($instructor_image_tmp,$uploads_image_directory . '/' . $image_new_name);
                 $reg = " insert into instructors(Instructor_id,Name,Course,Class,Instructor_image,Description) values('$instructor_id','$instructor_name','$instructor_course','$instructor_class','$image_new_name','$instructor_description')";
                 $result = mysqli_query($con,$reg) or die(mysqli_error($con));
                 if($result){
