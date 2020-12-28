@@ -2,11 +2,14 @@
 session_start();
 $con = new mysqli('localhost', 'root', '', 'Nyigisha_db') or die(mysqli_error($con));
 $select_courses = "SELECT * FROM Courses";
-$result_courses = mysqli_query($con,$select_courses);
+$result_courses = mysqli_query($con, $select_courses);
 $rows = mysqli_num_rows($result_courses);
-$select_instructors = "SELECT * FROM instructors";
-$result_instructors = mysqli_query($con,$select_instructors);
+$select_instructors = "SELECT Instructor_image FROM instructors";
+$result_instructors = mysqli_query($con, $select_instructors);
 $instructors_num = mysqli_num_rows($result_instructors);
+$select_instructors_content = "SELECT * FROM instructors";
+$result_instructors_content = mysqli_query($con, $select_instructors_content);
+$instructors_num = mysqli_num_rows($result_instructors_content);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,10 +100,10 @@ $instructors_num = mysqli_num_rows($result_instructors);
     <div id="courses">
         <div class="info-courses">
             <div class="courses-number">
-                <p class="course-detail"><span class="number"><?php echo $rows;?>+</span>Courses</p>
+                <p class="course-detail"><span class="number"><?php echo $rows; ?>+</span>Courses</p>
             </div>
             <div class="students-number">
-                <p class="course-detail"><span class="number"><?php echo $row_students;?>+</span>Students</p>
+                <p class="course-detail"><span class="number"><?php echo $row_students; ?>+</span>Students</p>
             </div>
             <div class="instructors-number">
                 <p class="course-detail"><span class="text">Coming Soon</span></p>
@@ -108,8 +111,8 @@ $instructors_num = mysqli_num_rows($result_instructors);
         </div>
         <button class="btn btn-primary" id="add-course">Add A Course</button>
         <div class="modal-form-courses">
-             <div class="col-md-4">
-                 <button class="close-modal-courses">+</button>
+            <div class="col-md-4">
+                <button class="close-modal-courses">+</button>
                 <form action="registration.php" method="post" enctype="multipart/form-data">
                     <label>Course Code</label>
                     <input class="form-control" type="text" name='course-code'>
@@ -124,45 +127,48 @@ $instructors_num = mysqli_num_rows($result_instructors);
                     <button type="submit" class="btn btn-primary" id="btn" name="submit-course">Submit</button>
                 </form>
 
-             </div>
-        </div>
-            <div class="input-group">
-                   <span class="input-group-addon">Search</span>
-                   <input type="text" id="search_courses" name="search_courses" placeholder="Search by Course name or by Course code" class="form-control">
             </div>
-            <div id="result"></div>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Search</span>
+            <input type="text" id="search_courses" name="search_courses" placeholder="Search by Course name or by Course code" class="form-control">
+        </div>
+        <div id="result"></div>
         <div class="lectures">
-             <?php
-                $con = mysqli_connect('localhost','root','','Nyigisha_db');
-                $sql = "SELECT * FROM Courses";
-                $result = mysqli_query($con,$sql);
-                while ($row = $result->fetch_assoc()) :
+            <?php
+            $con = mysqli_connect('localhost', 'root', '', 'Nyigisha_db');
+            $sql = "SELECT * FROM Courses";
+            $result = mysqli_query($con, $sql);
+            while ($row = $result->fetch_assoc()) :
             ?>
                 <div class="course">
                     <div class="course-image">
-                         <img src="uploads_image/<?php echo $row['Course_image'];?>" alt="image-course">
+                        <img src="uploads_image/<?php echo $row['Course_image']; ?>" alt="image-course">
                     </div>
-                    <a href="uploads/<?php echo $row['course_file']?>" class="course_link" target="_blank">
+                    <a href="uploads/<?php echo $row['course_file'] ?>" class="course_link" target="_blank">
                         <div class="course-text">
                             <p><?php echo $row['Course_name']; ?></p>
                         </div>
                     </a>
                 </div>
-            <?php endwhile;?>
+            <?php endwhile; ?>
         </div>
     </div>
-     <div id="instructors">
-         <?php while ($row_instructors = $result_instructors->fetch_assoc()):?>
-               <a href="#<?php echo $row_instructors['Instructor_id'];?>"><img src="instructors_image/<?php echo $row_instructors['Instructor_image'];?>" alt="<?php echo $row_instructors['Name'];?>" class="instructors"></a>
-               <div id="<?php echo $row_instructors['Instructor_id'];?>">
-                    <p class="instructor_description"><span>Names:</span><?php echo $row_instructors['Name']?></p>
-                    <p class="instructor_description"><span>Teaches:</span><?php echo $row_instructors['Course']?></p>
-                    <p class="instructor_description"><span>Classes:</span><?php echo $row_instructors['Class']?></p>
-                    <p class="instructor_description"><span>Description:</span><?php echo $row_instructors['Description']?></p>
-               </div>
-         <?php endwhile;?>
-         <button class="btn btn-primary" id="new-instructor">New Instructor</button>
-         <div id="modal-form-instructors">
+    <div id="instructors">
+        <?php while ($row_instructors_images = $result_instructors->fetch_assoc()) : ?>
+            <a href="#<?php echo $row_instructors_images['Instructor_id']; ?>"><img src="instructors_image/<?php echo $row_instructors_images['Instructor_image']; ?>" alt="<?php echo $row_instructors_images['Name']; ?>" class="instructors"></a>
+
+        <?php endwhile; ?>
+        <?php while ($row_instructors = $result_instructors_content->fetch_assoc()) : ?>
+            <div id="<?php echo $row_instructors['Instructor_id']; ?>">
+                <p class="instructor_description"><span>Names:</span><?php echo $row_instructors['Name'] ?></p>
+                <p class="instructor_description"><span>Teaches:</span><?php echo $row_instructors['Course'] ?></p>
+                <p class="instructor_description"><span>Classes:</span><?php echo $row_instructors['Class'] ?></p>
+                <p class="instructor_description"><span>Description:</span><?php echo $row_instructors['Description'] ?></p>
+        </div>
+        <?php endwhile;?>
+        <button class="btn btn-primary" id="new-instructor">New Instructor</button>
+        <div id="modal-form-instructors">
             <div class="col-md-4" id="instructor-form">
                 <button id="close-modal-instructors">+</button>
                 <form action="registration.php" method="POST" enctype="multipart/form-data">
@@ -182,8 +188,9 @@ $instructors_num = mysqli_num_rows($result_instructors);
                 </form>
             </div>
         </div>
-     </div>
+    </div>
 </body>
+
 </html>
 <script>
     $(document).ready(function() {
@@ -196,30 +203,31 @@ $instructors_num = mysqli_num_rows($result_instructors);
                     [2, 'student_class']
                 ]
             },
-            restoreButton:false,
+            restoreButton: false,
             onSuccess: function(data, textStatus, jqXHR) {
                 if (data.action == 'delete') {
                     $('#' + data.student_id).remove();
                 }
             }
         });
-        $('#search_courses').keyup(function(){
+        $('#search_courses').keyup(function() {
             var txt = $(this).val();
-            if(txt != ''){
+            if (txt != '') {
                 $.ajax({
-                    url:'search.php',
-                    method:'post',
-                    data:{search:txt},
-                    dataType:'text',
-                    success:function(data){
+                    url: 'search.php',
+                    method: 'post',
+                    data: {
+                        search: txt
+                    },
+                    dataType: 'text',
+                    success: function(data) {
                         $('#result').html(data);
                     }
                 });
-                document.querySelector('.lectures').style.display='none';
-            }
-            else{
+                document.querySelector('.lectures').style.display = 'none';
+            } else {
                 $('#result').html('');
-                document.querySelector('.lectures').style.display='flex';
+                document.querySelector('.lectures').style.display = 'flex';
             }
         });
     });
@@ -232,7 +240,7 @@ $instructors_num = mysqli_num_rows($result_instructors);
         document.querySelector('#students-link').setAttribute("class", " active");
         var courses = document.querySelector('#courses');
         courses.style.display = 'none';
-        document.querySelector('#instructors').style.display='none';
+        document.querySelector('#instructors').style.display = 'none';
     }
 
     function displayCourses() {
@@ -243,11 +251,12 @@ $instructors_num = mysqli_num_rows($result_instructors);
         document.querySelector('#courses-link').setAttribute("class", "active");
         var students = document.querySelector('#students');
         students.style.display = 'none';
-        document.querySelector('#instructors').style.display='none';
+        document.querySelector('#instructors').style.display = 'none';
     };
-    function displayInstructors(){
+
+    function displayInstructors() {
         var instructors = document.querySelector('#instructors');
-        instructors.style.display ='block';
+        instructors.style.display = 'block';
         document.querySelector('#students-link').setAttribute("class", " ");
         document.querySelector('#instructors-link').setAttribute("class", "active");
         document.querySelector('#courses-link').setAttribute("class", "");
@@ -263,12 +272,12 @@ $instructors_num = mysqli_num_rows($result_instructors);
         var form = document.querySelector('#modal-form');
         form.style.display = 'flex';
     });
-    document.querySelector('#add-course').addEventListener('click',function(){
-        var form= document.querySelector('.modal-form-courses');
+    document.querySelector('#add-course').addEventListener('click', function() {
+        var form = document.querySelector('.modal-form-courses');
         form.style.display = 'flex';
     });
-    document.querySelector('#new-instructor').addEventListener('click',function(){
-        var form= document.querySelector('#modal-form-instructors');
+    document.querySelector('#new-instructor').addEventListener('click', function() {
+        var form = document.querySelector('#modal-form-instructors');
         form.style.display = 'flex';
     });
     document.querySelector('.close-modal-courses').addEventListener('click', function() {
