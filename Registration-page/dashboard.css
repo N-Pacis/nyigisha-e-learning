@@ -298,9 +298,39 @@ body {
     object-fit: contain;
   }
   .instructors{
+    margin: 10px;
     width: 100px;
     height: 100px;
     border-radius: 100%;
+    transition: 0.5s;   
+  }
+  .instructors:hover{
+    filter: grayscale(100%);
+  }
+  .inst_images{
+    display: flex;
+    flex-wrap: wrap;
+    width: 610px;
+    border-right: 1px solid #ccc;
+    float: left;
+  }
+  .inst_info{
+    width: 400px;
+    float: right;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 20px;
+    height: 0;
+    overflow: hidden;
+  }
+  .inst_info:target{
+    margin-top: 200px;
+    margin-right: 20px;
+    height: auto;
+  }
+  .inst_info p.instructor_description span{
+    font-weight: bold;
+    margin-right: 5px;
   }
   @media screen and (max-width: 700px) {
     .sidebar {

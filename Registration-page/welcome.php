@@ -4,7 +4,7 @@ $con = new mysqli('localhost', 'root', '', 'Nyigisha_db') or die(mysqli_error($c
 $select_courses = "SELECT * FROM Courses";
 $result_courses = mysqli_query($con,$select_courses);
 $rows = mysqli_num_rows($result_courses);
-$select_instructors = "SELECT Instructor_image FROM instructors";
+$select_instructors = "SELECT * FROM instructors";
 $result_instructors = mysqli_query($con,$select_instructors);
 $instructors_num = mysqli_num_rows($result_instructors);
 $select_instructors_content = "SELECT * FROM instructors";
@@ -155,11 +155,13 @@ $instructors_num_content= mysqli_num_rows($result_instructors_content);
         </div>
     </div>
      <div id="instructors">
-         <?php while ($row_instructors_images = $result_instructors->fetch_assoc()):?>
-               <a href="#<?php echo $row_instructors_images['Instructor_id'];?>"><img src="instructors_image/<?php echo $row_instructors_images['Instructor_image'];?>" alt="<?php echo $row_instructors_images['Name'];?>" class="instructors"></a>
+        <div class="inst_images">
+        <?php while ($row_instructors_images = $result_instructors->fetch_assoc()):?>
+               <a href="#<?php echo $row_instructors_images['Instructor_id'];?>"><img src="instructors_image/<?php echo $row_instructors_images['Instructor_image'];?>" class="instructors" alt="<?php echo $row_instructors_images['Name'];?>"></a>
          <?php endwhile;?>
+        </div>
          <?php while ($row_instructors = $result_instructors_content->fetch_assoc()):?>
-            <div id="<?php echo $row_instructors['Instructor_id'];?>">
+            <div id="<?php echo $row_instructors['Instructor_id'];?>" class="inst_info">
                     <p class="instructor_description"><span>Names:</span><?php echo $row_instructors['Name']?></p>
                     <p class="instructor_description"><span>Teaches:</span><?php echo $row_instructors['Course']?></p>
                     <p class="instructor_description"><span>Classes:</span><?php echo $row_instructors['Class']?></p>
