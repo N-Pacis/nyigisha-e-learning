@@ -154,12 +154,12 @@ $instructors_num = mysqli_num_rows($result_instructors);
      <div id="instructors">
          <?php while ($row_instructors = $result_instructors->fetch_assoc()):?>
                <a href="#<?php echo $row_instructors['Instructor_id'];?>"><img src="instructors_image/<?php echo $row_instructors['Instructor_image'];?>" alt="<?php echo $row_instructors['Name'];?>" class="instructors"></a>
-               <div id="<?php echo $row_instructors['Instructor_id'];?>">
-                    <p class="instructor_description"><span>Names:</span><?php echo $row_instructors['Name']?></p>
-                    <p class="instructor_description"><span>Teaches:</span><?php echo $row_instructors['Course']?></p>
-                    <p class="instructor_description"><span>Classes:</span><?php echo $row_instructors['Class']?></p>
-                    <p class="instructor_description"><span>Description:</span><?php echo $row_instructors['Description']?></p>
-               </div>
+               <div id="<?php echo $row_instructors['Instructor_id'];?>" class="inst">
+                    <p class="instructor_description"><span>Names: </span><?php echo $row_instructors['Name']?></p>
+                    <p class="instructor_description"><span>Teaches: </span><?php echo $row_instructors['Course']?></p>
+                    <p class="instructor_description"><span>Classes: </span><?php echo $row_instructors['Class']?></p>
+                    <p class="instructor_description"><span>Description: </span><?php echo $row_instructors['Description']?></p>
+               </div> 
          <?php endwhile;?>
          <button class="btn btn-primary" id="new-instructor">New Instructor</button>
          <div id="modal-form-instructors">
