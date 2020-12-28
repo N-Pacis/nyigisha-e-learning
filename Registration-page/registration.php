@@ -162,10 +162,10 @@ elseif (isset($_POST['add_instructor'])) {
 
     $instructor_image_ext = explode('.',$instructor_image_name);
     $instructor_image_actual_ext = strtolower(end($instructor_image_ext));
-    $allowed_image_ext = array('jpeg','jpg','png');
-    if (in_array($instructor_image_actual_ext,$allowed_image_ext)) {
+    $allowed_image_extension = array('jpeg','jpg','png');
+    if (in_array($instructor_image_actual_ext,$allowed_image_extension)) {
         if ($instructor_image_error == 0) {
-            if($instructor_image_size <=1000000){
+            if($instructor_image_size <=10000000){
                 $image_new_name = uniqid('', true) . "-" . $instructor_image_name;
                 $uploads_image_directory = 'instructors_image';
                 move_uploaded_file($instructor_image_tmp,$uploads_image_directory . '/' . $image_new_name);
