@@ -50,10 +50,11 @@
         <div class="col-md-4">
             <form action="validation.php" method="post">
                 <h2>Login Here</h2>
+                <div class="border-line-form"></div>
                 <label>School name</label>
-                <input type="text" name="school" class="form-control" required>
+                <input type="text" name="school" class="form-control" placeholder="eg:Rwanda Coding Academy" required>
                 <label>Password</label>
-                <input type="password" name="password" class="form-control" required><br>
+                <input type="password" name="password" class="form-control" placeholder="Enter your password" required><br>
                 <button type="submit" class="btn btn-primary"> Login </button>
             </form><br>
             <a href="myLogin.php"><button class="btn btn-primary">Create an account</button></a>
