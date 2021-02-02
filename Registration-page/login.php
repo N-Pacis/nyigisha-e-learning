@@ -30,8 +30,15 @@
             <a href="#" class="active">BOOKS</a>
             <a href="../About-us/about.php">ABOUT US</a>
             <a class="nav-lists" href="../Homepage/Nyigisha.php">HOME</a>
-
         </div>
+        <div class="navLinks-mobile">
+            <a class="nav-lists" href="../Homepage/Nyigisha.php">HOME</a>
+            <a href="../About-us/about.php">ABOUT US</a>
+            <a href="#" class="active">BOOKS</a>
+            <a href="../contact-us/contact-form.php" class="nav-lists">JOIN US</a>
+        </div>
+        <button title="Menu" onclick="openNavbar()" id="menu"><i class="fa fa-bars"></i></button>
+        <button id="close" onclick="closeNavbar()" title="close">+</button>
     </div>
     <?php if ($_SESSION['error-message'] != "") : ?>
         <div class="error-message-div">
@@ -125,6 +132,18 @@
             <?php
             $_SESSION['error-message'] = "";
             ?>
+        };
+
+        function openNavbar() {
+            document.querySelector(".navLinks-mobile").style.display = "block";
+            document.querySelector('#menu').style.display="none";
+            document.querySelector("#close").style.display="block";
+        }
+
+        function closeNavbar(){
+            document.querySelector(".navLinks-mobile").style.display="none";
+            document.querySelector("#close").style.display="none";
+            document.querySelector("#menu").style.display="block";
         }
     </script>
 </body>
