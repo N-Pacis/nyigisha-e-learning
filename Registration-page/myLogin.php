@@ -12,9 +12,9 @@
     <title>Registration page</title>
     <body>
     </head>
-    <div class="loader_bg">
+   <!--  <div class="loader_bg">
         <div class="loader"></div>
-    </div>
+    </div> -->
     <div class="navbar-holder">
         <img src="../Photos/rda.svg">
         <a href="#" title="Telephone"><i class="fa fa-phone"></i></a>

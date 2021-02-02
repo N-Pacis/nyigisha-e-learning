@@ -287,13 +287,13 @@ body {
     margin-top: 70px;
     border-radius: 4px;
     position: relative;
+    height: 29px;
     z-index: 2 !important;
   }
   #instructor-form input[type=file]{
     padding: 0px;
     margin-bottom: 10px ;
     font-size: 15px;
-    height: 29px;
     cursor: pointer;
     object-fit: contain;
   }

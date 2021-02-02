@@ -15,9 +15,9 @@
   <title>Nyigisha Online Courses</title>
 </head>
 <body>
-<div class="loader_bg">
+<!-- <div class="loader_bg">
     <div class="loader"></div>
-</div> 
+</div>  -->
 <div class="bg-img">
   <div class="container">
     <div class="navbar">

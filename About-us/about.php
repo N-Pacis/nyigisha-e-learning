@@ -12,21 +12,23 @@
   <title>About us</title>
 </head>
 <body>
-  <div class="loader_bg">
+ <!--  <div class="loader_bg">
     <div class="loader"></div>
-  </div> 
-    <div class="container">
-      <div class="navbar">
-       <img src="../Photos/rda.svg">
-       <a href="#" title="Telephone"><i class="fa fa-phone"></i></a>
-       <a href="#" title="Email"><i class="fa fa-envelope"></i></a>
-       <a href="#" title="Share"><i class="fa fa-share-alt"></i></a>
-       <a href="../contact-us/contact-form.php" class="nav-lists">JOIN US</a>
-       <a href="../Registration-page/login.php" class="nav-lists">BOOKS</a>
-       <a href="#" class="active">ABOUT US</a>
-       <a class="nav-lists" href="../Homepage/Nyigisha.php">HOME</a>
-       <a class="p">NYIGISHA</a>
-      </div>
+  </div>  -->
+  <div class="navbar-holder">
+        <img src="../Photos/rda.svg" class="header-image">
+        <h1 class="heading-title">NYIGISHA</h1>
+        <div class="navLinks">
+            <a href="#" title="Telephone"><i class="fa fa-phone"></i></a>
+            <a href="#" title="Share"><i class="fa fa-share-alt"></i></a>
+            <a href="#" title="Email"><i class="fa fa-envelope"></i></a>
+            <a href="../contact-us/contact-form.php" class="nav-lists">JOIN US</a>
+            <a href="../Registration-page/login.php" class="nav-lists">BOOKS</a>
+            <a href="#" class="active">ABOUT US</a>
+            <a class="nav-lists" href="../Homepage/Nyigisha.php">HOME</a>
+
+        </div>
+  </div>
     <div class="sidebar">
       <a href="#" title="Books"><i class="fa fa-book"></i></a>
      <a href="#" title="Videos"><i class="fa fa-video"></i></a>
@@ -37,7 +39,7 @@
     <div class="about-nyigisha">
          <div class="content">
              <p class="context"><span class="nyigisha-bold">Nyigisha</span> is an online school management where students  can attain free courses,books and exercises from their respective schools easily.As we all know that in order to be successful you need to practise,exercise and learn something new daily.The main purpose of this platform is to help students to access their lessons even if there are at home.The available curriculum are WDA curriculum and REB curriculum.We want to make Nyigisha E-learning worldwide inorder to help many people as possible</p>
-         </div> 
+         </div>  
          <div class="image-content">
              <img src="../Photos/8.png" alt="student">
          </div>
@@ -64,7 +66,7 @@
         </div>
    </div> 
    <h3 class="partners-h3">Our partners</h3>
-   <div class="border-line"></div>
+   <div class="border-line-partners"></div>
    <div class="partners">
       <img name='mineduc' alt="Partners" src="../Photos/mineduc.jpg">
       <img name='rca' alt="Partners" src="../Photos/rca.jpeg">

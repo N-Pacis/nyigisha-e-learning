@@ -139,7 +139,7 @@ $instructors_num_content= mysqli_num_rows($result_instructors_content);
                 $con = mysqli_connect('localhost','root','','Nyigisha_db');
                 $sql = "SELECT * FROM Courses";
                 $result = mysqli_query($con,$sql);
-                while ($row = $result->fetch_assoc()) :
+                while ($row = $result->fetch_assoc()) : 
             ?>
                 <div class="course">
                     <div class="course-image">
