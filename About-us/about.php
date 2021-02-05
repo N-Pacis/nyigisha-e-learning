@@ -25,8 +25,8 @@
             <a href="#" title="Share"><i class="fa fa-share-alt"></i></a>
             <a href="#" title="Email"><i class="fa fa-envelope"></i></a>
             <a href="../contact-us/contact-form.php" class="nav-lists">JOIN US</a>
-            <a href="#" class="active">BOOKS</a>
-            <a href="../About-us/about.php">ABOUT US</a>
+            <a href="../Registration-page/login.php" class="nav-lists">BOOKS</a>
+            <a href="#" class="active">ABOUT US</a>
             <a class="nav-lists" href="../Homepage/Nyigisha.php">HOME</a>
         </div>
         <div class="navLinks-mobile">
