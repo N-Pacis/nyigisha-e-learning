@@ -3,10 +3,10 @@ window.addEventListener('scroll',function(){
     navbar.classList.toggle('nav-scroll',window.scrollY > 0);
 });
     const container= document.getElementsByClassName(".bg-img");
-
+    //@ts-ignore
     const tl = new TimelineMax({});
 
-    tl.fromTo("body",.9,{width:"0%"},{width:"100%"});
-    tl.fromTo(".navbar",0.4,{marginTop:"-90px"},{marginTop:"0px"});
-    tl.fromTo(".p",1.2,{marginTop:"-55px"},{marginTop:"7px"});
-    tl.fromTo("img",1.0,{marginLeft:"-170px"},{marginLeft:"10px"});
+    tl.fromTo(".bg-img",.9,{scale:"0.90"},{scale:"1"});
+    tl.fromTo(".navbar",0.9,{opacity:"0"},{opacity:"1"});
+    tl.fromTo(".p",2.0,{opacity:"0.5"},{opacity:"1"});
+    tl.fromTo("img",0.2,{opacity:"0.6"},{opacity:"1"});
