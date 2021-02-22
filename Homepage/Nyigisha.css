@@ -187,6 +187,10 @@ width:60px;
   border-bottom: 2px solid #ff9800;
   margin-bottom: 3%;
 }
+.navLinks-mobile>a.active{
+  color: #ff9800;
+
+}
 .bg-img{
   scale:0.90;
 }

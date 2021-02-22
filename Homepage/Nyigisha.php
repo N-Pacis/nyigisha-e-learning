@@ -33,8 +33,8 @@
           <a class="active" href="#">HOME</a>
         </div>
         <div class="navLinks-mobile">
-          <a class="nav-lists" href="../Homepage/Nyigisha.php">HOME</a>
-          <a href="#" class="active">ABOUT US</a>
+          <a class="active" href="#">HOME</a>
+          <a href="../About-us/about.php" class="nav-lists">ABOUT US</a>
           <a href="../Registration-page/login.php" class="nav-lists">BOOKS</a>
           <a href="../contact-us/contact-form.php" class="nav-lists">JOIN US</a>
         </div>
