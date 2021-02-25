@@ -105,7 +105,7 @@
           </a>
           <a href="../Registration-page/login.php">
             <li>BOOKS</li>
-          </a>-+
+          </a>
           <a href="../contact-us/contact-form.php">
             <li>JOIN US</li>
           </a>
