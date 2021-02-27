@@ -16,9 +16,9 @@
 </head>
 
 <body onload="clearSession()">
-    <!-- <div class="loader_bg">
+    <div class="loader_bg">
         <div class="loader"></div>
-    </div> -->
+    </div>
     <div class="navbar-holder">
         <img src="../Photos/rda.svg" class="header-image">
         <h1 class="heading-title">NYIGISHA</h1>
@@ -47,7 +47,7 @@
     <?php endif; ?>
     <div class="sign-in-div">
         <img src="./images/sign_in2.svg" alt="sign-in-svg" />
-        <div class="col-md-4">
+        <div class="col-md-4 form-div">
             <form action="validation.php" method="post">
                 <h2>Login Here</h2>
                 <div class="border-line-form"></div>

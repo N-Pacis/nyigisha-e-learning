@@ -14,9 +14,9 @@
 </head>
 
 <body>
-  <!--  <div class="loader_bg">
+   <div class="loader_bg">
     <div class="loader"></div>
-  </div>  -->
+  </div> 
   <div class="navbar-holder">
     <img src="../Photos/rda.svg" class="header-image">
     <h1 class="heading-title">NYIGISHA</h1>
