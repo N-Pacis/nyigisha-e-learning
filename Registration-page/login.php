@@ -1,4 +1,4 @@
-<? 
+<?php 
    session_start()
 ?>
 <!DOCTYPE html>
@@ -40,7 +40,7 @@
         <button title="Menu" onclick="openNavbar()" id="menu"><i class="fa fa-bars"></i></button>
         <button id="close" onclick="closeNavbar()" title="close">+</button>
     </div>
-    <?php if ($_SESSION['error-message'] != "") : ?>
+    <?php if($_SESSION['error-message'] != ""):?>
         <div class="error-message-div">
             <p><?php echo $_SESSION['error-message']; ?></p>
         </div>

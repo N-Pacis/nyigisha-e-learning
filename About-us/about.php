@@ -45,32 +45,24 @@
     <a href="#" title="Healthy Updates"><i class="fas fa-notes-medical"></i></a>
   </div>
   </div>
-  <div class="about-nyigisha">
     <div class="content">
       <p class="context"><span class="nyigisha-bold">Nyigisha</span> is an online school management where students can attain free courses,books and exercises from their respective schools easily.As we all know that in order to be successful you need to practise,exercise and learn something new daily.The main purpose of this platform is to help students to access their lessons even if there are at home.The available curriculum are WDA curriculum and REB curriculum.We want to make Nyigisha E-learning worldwide inorder to help many people as possible</p>
     </div>
-    <div class="image-content">
-      <img src="../Photos/8.png" alt="student">
-    </div>
-  </div><br><br><br>
   <!-- <h3 class="services">Our Services</h3><br> -->
   <div class="about-nyigisha1">
     <div class="content1">
       <h4>Our focus</h4>
-      <div class="border-line"></div>
-      <img src="../Photos/focus.png" alt="focus">
+      <div class="border-line first"></div>
       <p class="context1">This platform allows a school to create a system that keep books and exercises for students based on their level of education. This platform was found necessary because students at home hardly get prepared modules and exercises from their teachers and mentors.</p>
     </div>
-    <div class="content2">
+    <div class="content2 ">
       <h4>Our goal</h4>
-      <div class="border-line"></div>
-      <img src="../Photos/download.png" alt="goal">
+      <div class="border-line second"></div>
       <p>We want to reach all Rwanda areas helping people in remote areas to access digital education and get their school's books while at home.This will increase knowledge among student as they will keep in touch with their studies even if they are in long vacations.</p>
     </div>
-    <div class="content3">
+    <div class="content3 ">
       <h4>Our uniqueness</h4>
-      <div class="border-line"></div>
-      <img src="../Photos/download (1).png" alt="uniqueness">
+      <div class="border-line third"></div>
       <p>Among millions of school management systems, Our system is unique because it allows student to access their school library,exercises and lesson modules remotely. A student can also upload a book in the school library.So this promotes the culture of reading and writing.</p>
     </div>
   </div>
@@ -82,7 +74,7 @@
     <img name='reb' alt="reb" src="../Photos/reb.jpg">
   </div>
   <h3 class="team-h3">Our team</h3>
-  <div class="border-line"></div>
+  <div class="border-line team-line"></div>
   <div class="container_a ">
     <div class="box">
       <div class="imgBox">
