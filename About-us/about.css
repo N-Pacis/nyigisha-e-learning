@@ -339,12 +339,21 @@ body {
     width: 14%;
     height: 90px;
     margin-bottom: 1%;
+    transition: all .8s ease;
+    cursor: pointer;
+    filter: grayscale(100%);
 }
 
 .partners>img:nth-child(2) {
     margin-top: 20px !important;
+    filter: grayscale(0%)!important;
     width: 20%;
     height: 180px;
+}
+
+.partners>img:hover {
+    transform: scale(1.025);
+    filter: grayscale(0%)!important;
 }
 
 .border-line:nth-child(2) {
@@ -615,6 +624,9 @@ body {
         padding: 25px 10px !important;
         white-space: nowrap;
         font-size: 22px;
+    }
+    .footer {
+        width: 107%;
     }
     .footer .inner_footer .footer_items:first-of-type {
         width: 100%;
