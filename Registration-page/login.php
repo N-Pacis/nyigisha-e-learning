@@ -57,7 +57,6 @@
                 <input type="password" name="password" class="form-control" placeholder="Enter your password" required><br>
                 <button type="submit" class="btn btn-primary"> Login </button>
             </form><br>
-            <a href="myLogin.php"><button class="btn btn-primary">Create an account</button></a>
         </div>
 
     </div>
