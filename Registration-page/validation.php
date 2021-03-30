@@ -1,7 +1,7 @@
 <?php
 session_start();
 $_SESSION['error-message'] = "";
-$con = mysqli_connect('localhost','root','') or die(mysqli_error($con));
+require('../utils/connection.php');
 mysqli_select_db($con, 'Nyigisha_db');
 $name = $_POST['school'];
 $pass = $_POST['password'];
@@ -11,7 +11,7 @@ $result = mysqli_query($con, $s);
 $num = mysqli_num_rows($result);
 if ($num ==1){
    $_SESSION['username'] = $name; 
-   header('location:welcome.php');   
+   header('location:../dashboard/dashboard-page/welcome.php');
 }else{
    $_SESSION['error-message'] = "Invalid email or password";
    header('location:login.php');

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Login</title>
 </head>
-
+ 
 <body onload="clearSession()">
     <div class="loader_bg">
         <div class="loader"></div>
@@ -107,7 +107,7 @@
                 <h2>Contact Us</h2>
                 <div class="border-line"></div>
                 <ul>
-                    <li><i class="fa fa-map-marker" arial-hidden="true"></i>1, XYZ Street, Kigali</li>
+                    <li><i class="fa fa-map-marker" arial-hidden="true"></i>Rwanda Coding Academy</li>
                     <li><i class="fa fa-phone" arial-hidden="true"></i>+250783364605</li>
                     <li><i class="fa fa-envelope" arial-hidden="true"></i>codeminds@gmail.com</li>
                 </ul>

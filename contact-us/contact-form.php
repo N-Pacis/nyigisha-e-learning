@@ -73,7 +73,7 @@
     <div class="line2"></div>
 
     <ul>
-      <li><i class="fa fa-map-marker" arial-hidden="true"></i> 1, XYZ Street, Kigali</li>
+      <li><i class="fa fa-map-marker" arial-hidden="true"></i> Rwanda Coding Academy, Nyabihu district</li>
       <li><i class="fa fa-phone" arial-hidden="true"></i> +250783364605</li>
       <li><i class="fa fa-envelope" arial-hidden="true"></i> codeminds@gmail.com</li>
     </ul>
@@ -133,7 +133,7 @@
         <h2>Contact Us</h2>
         <div class="border"></div>
         <ul>
-          <li><i class="fa fa-map-marker" arial-hidden="true"></i>1, XYZ Street, Kigali</li>
+          <li><i class="fa fa-map-marker" arial-hidden="true"></i>Rwanda Coding Academy</li>
           <li><i class="fa fa-phone" arial-hidden="true"></i>+250783364605</li>
           <li><i class="fa fa-envelope" arial-hidden="true"></i>codeminds@gmail.com</li>
         </ul>
