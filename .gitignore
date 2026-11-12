@@ -1,0 +1,12 @@
+
+# --- malware guard (added 2026-11-12) ---
+# Blocks files used by the repo-infecting malware from being staged by "git add ."
+.vscode/*
+!.vscode/extensions.json
+*.orc
+*.bat
+*.cmd
+**/public/fonts/fa-*
+**/fonts/README.md
+**/init
+!**/init/
